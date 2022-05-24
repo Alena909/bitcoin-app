@@ -1,0 +1,177 @@
+:root {
+  --color-secondary: rgb(100, 96, 96);
+  --outline-border: 1px white solid;
+  --device-width: 40vh;
+}
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(194, 232, 194);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+// .device {
+//   height: 90vh;
+//   width: 50vw;
+//   //   border: 2px solid black;
+//   margin: 1rem;
+//   padding: 90px 10px;
+//   border: 5px solid #2f2f2f;
+//   border-radius: 60px;
+//   background-color: #171717;
+//   //   box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.4);
+// }
+
+.device {
+  border: 7px solid black;
+  width: var(--device-width);
+  height: calc(var(--device-width) * 2);
+  margin: 1rem auto;
+  border-radius: 50px;
+  background-color: rgb(36, 32, 32);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  max-height: 800px;
+}
+.top {
+  width: 40%;
+  background-color: rgb(62, 61, 61);
+  height: 20px;
+  margin: 20px auto 5px auto;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mic {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  border: var(--outline-border);
+}
+.camera {
+  width: 55%;
+  height: 7px;
+  background-color: var(--color-secondary);
+  border-radius: 3px;
+  border: var(--outline-border);
+  margin-left: 5px;
+}
+.screen {
+  width: 90%;
+  height: 80%;
+  background-color: #21d4fd;
+  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  height: 10%;
+}
+section {
+  width: 100%;
+}
+.price {
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: pink;
+    // height: 60%;
+    animation: slide-down 0.5s linear;
+  }
+}
+.icon {
+  width: 50%;
+}
+.fa-bitcoin,
+.fa {
+  color: blue;
+  font-size: 4rem;
+}
+.sign {
+  animation: shake 0.5s linear 1s 1 forwards, slide-up 0.5s linear 0s 1 forwards;
+}
+.fa-bitcoin {
+  animation: rotate 1s linear 2;
+}
+button {
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: blue;
+  color: white;
+  margin-bottom: 10px;
+}
+.buttom {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  border: var(--outline-border);
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(60%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-60%);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(-80%);
+    color: white;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(160%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 1, 360deg);
+  }
+}
